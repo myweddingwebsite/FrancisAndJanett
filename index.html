@@ -296,7 +296,35 @@
     font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: var(--sage);
     align-self: center; line-height: 1; opacity: 0.4; margin-top: -0.8rem;
   }
-  @media (max-width: 480px) { .countdown-sep { display: none; } }
+ @media (max-width: 768px) {
+
+  .countdown-grid{
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-items:flex-start;
+    gap:10px;
+  }
+
+  .countdown-unit{
+    flex:1;
+    min-width:0;
+  }
+
+  .countdown-number{
+    font-size:clamp(1.8rem,7vw,2.5rem);
+    min-width:auto;
+  }
+
+  .countdown-label{
+    font-size:0.55rem;
+    letter-spacing:0.08em;
+  }
+
+  .countdown-sep{
+    display:none;
+  }
+}
 
   /* ══════════════════════════════════════
      TIMELINE
@@ -325,14 +353,44 @@
   }
   .tl-content { flex: 1; }
   .tl-content h4 { font-size: 1.15rem; color: var(--deep-olive); margin-bottom: 0.2rem; }
-  @media (max-width: 580px) {
-    .timeline-wrap::before { left: 0; }
-    .tl-item, .tl-item:nth-child(odd) {
-      flex-direction: row; text-align: left; padding-left: 1.5rem;
-    }
-    .tl-dot { position: absolute; left: -6px; }
-    .tl-item:nth-child(odd) .tl-time { order: 1; }
+@media (max-width: 580px) {
+
+  .timeline-wrap::before{
+    display:none;
   }
+
+  .tl-item,
+  .tl-item:nth-child(odd){
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    text-align:left;
+    gap:14px;
+    padding-left:0;
+    margin-bottom:24px;
+  }
+
+  .tl-time{
+    min-width:75px;
+    text-align:right;
+  }
+
+  .tl-dot{
+    position:static;
+    margin-top:0;
+  }
+
+  .tl-content{
+    flex:0 0 auto;
+    min-width:180px;
+    text-align:left;
+  }
+
+  .tl-content h4{
+    margin-bottom:2px;
+  }
+
+}
 
   /* ══════════════════════════════════════
      ENTOURAGE
