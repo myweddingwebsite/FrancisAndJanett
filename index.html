@@ -180,9 +180,25 @@
   }
   .hero-names {
     font-family: 'Parfumerie Script Old Style', cursive; font-size: clamp(3.5rem, 12vw, 7.5rem);
-    font-weight: 300; color: var(--warm-white); line-height: .09;
+    font-weight: 300; color: var(--warm-white); line-height: .5;
     letter-spacing: 0.03em;
   }
+  .hero-text{
+  position:absolute;
+  top:40px;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(90%, 600px);
+
+  text-align:right;
+  z-index:2;
+}
+.hero-text h1,
+.hero-text h2,
+.hero-text .couple-names{
+  width:100%;
+  text-align:right;
+}
   .hero-ampersand {
     display: block; font-style: italic; color: var(--gold); font-size: 0.6em;
     line-height: 1.3;
